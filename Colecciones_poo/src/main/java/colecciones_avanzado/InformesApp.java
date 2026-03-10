@@ -28,11 +28,29 @@ public class InformesApp {
         listainformes.push(new Informes(201,"ir al medico","PERSONAL"));
         listainformes.push(new Informes(202,"reunion con jefes","ADMINISTRATIVO"));
 
+
         for (Informes informes_ : listainformes){
             System.out.println(informes_);
         }
 
-        //for ()
+        while (!listainformes.empty()){
+            System.out.println("orden de salida "+listainformes.pop());
+
+        }
+
+        Stack<Informes> pilacontar = new Stack<>();
+
+        pilacontar.push(new Informes(1,"ver el informe","ADMINISTRATIVO"));
+        pilacontar.push(new Informes(2,"gestion personal","PERSONAL"));
+        pilacontar.push(new Informes(1,"revisar expediente", "PERSONAL"));
+
+
+        for (Informes contarinf : pilacontar){
+            System.out.println(contarinf);
+        }
+
+
+
 
 
     }
