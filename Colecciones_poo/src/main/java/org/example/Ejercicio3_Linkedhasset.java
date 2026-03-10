@@ -7,7 +7,7 @@ import java.util.Set;
 public class Ejercicio3_Linkedhasset {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Set<String> listanavegacion = new LinkedHashSet<>(); // con esta implementacion se puede 
+        Set<String> listanavegacion = new LinkedHashSet<>(); // con esta implementacion se puede
         String url;
         do {
             System.out.print("Escribe una URL visitada (o 'salir' para terminar): ");
