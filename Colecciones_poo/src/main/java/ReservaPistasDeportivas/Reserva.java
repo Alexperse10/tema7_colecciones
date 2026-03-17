@@ -14,6 +14,9 @@ public class Reserva {
         this.fecha_hora = fecha_hora;
     }
 
+    public Reserva(Usuarios usuario, Pistas pista) {
+    }
+
 
     public Pistas getPistas() {
         return pistas;
