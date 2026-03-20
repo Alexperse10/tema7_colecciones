@@ -25,8 +25,15 @@ public class Mercadaw {
             int indice = aleatorio.nextInt(caracteres.length());
             usuario += caracteres.charAt(indice);
         }
-        System.out.println("usuario: "+usuario);
-        System.out.println("contraseña: "+contraseña);
+
+
+//        Cliente cliente1 = new Cliente(usuario,contraseña);
+//        cliente.add(cliente1);
+//        Cliente cliente2 = new Cliente(usuario,contraseña);
+//        cliente.add(cliente2);
+//        Cliente cliente3 = new Cliente(usuario,contraseña);
+//        cliente.add(cliente3);
+//        Cliente cliente4 = new Cliente(usuario,contraseña);
     }
 
     public Set<Cliente> getClientes() {

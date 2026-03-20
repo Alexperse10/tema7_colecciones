@@ -11,9 +11,23 @@ public class AppZonaClientes {
 
     public static void main(String[] args) {
         Mercadaw mercadaw1 = new Mercadaw();
+         Cliente cliente1 = new Cliente("8447544d","845fedfe");
+        Pedido pedido1 = new Pedido();
+
     }
 
     public static void autenticacion(Set<Cliente> cliente){
+        System.out.println("==== Compra online en mercadaw ====");
+        System.out.println("usuario: ");
+        String usuario = sc.nextLine();
+        System.out.println("contraseña: ");
+        String contraseña = sc.nextLine();
+
+        for (Cliente cliente_ : cliente){
+            if (!cliente_.getContraseña().equals(contraseña)|| !cliente_.getUsuario(usuario)){
+
+            }
+        }
 
     }
 
