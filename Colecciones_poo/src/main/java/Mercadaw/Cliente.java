@@ -16,11 +16,12 @@ public class Cliente {
     }
 
     public void crearpedido(){
-
+        System.out.println("creando pedido....");
+        this.pedido = new Pedido();
     }
 
     public void insertarProducto(Producto producto) {
-
+            pedido.insertarProducto(producto);
     }
 
     public void setUsuario(String usuario) {
