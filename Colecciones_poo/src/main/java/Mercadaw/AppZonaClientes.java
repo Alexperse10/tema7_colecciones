@@ -22,6 +22,7 @@ public class AppZonaClientes {
              respuesta = sc.nextLine().toLowerCase().charAt(0);
         }while (respuesta=='s');
         imprimirresumen();
+        clienteactual.getPedido().aplicarPromo3x2();
         System.out.println("==================");
         System.out.println("Que desea hacer");
         System.out.println("[1] aplicar promos");
@@ -31,13 +32,12 @@ public class AppZonaClientes {
         int numero = sc.nextInt();
         switch (numero){
             case '1':
-                
+
                 break;
             case '2':
                 break;
             case '3':
-                System.out.println("=== GRACIAS POR SU PEDIDO ====");
-                System.out.println("lo recibira en uno dias en la direccion calle falsa, 123");
+                imprimirdespedida();
                 break;
             default:
 
@@ -106,7 +106,8 @@ public class AppZonaClientes {
     }
 
     public static void imprimirdespedida() {
-
+        System.out.println("=== GRACIAS POR SU PEDIDO ====");
+        System.out.println("lo recibira en uno dias en la direccion calle falsa, 123");
     }
     public static void mostraropcion() {
 

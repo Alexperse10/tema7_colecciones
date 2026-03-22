@@ -52,6 +52,10 @@ public class Cliente {
         return pedido;
     }
 
+    public boolean isPromociones() {
+        return promociones;
+    }
+
     @Override
     public String toString() {
         return "Cliente{" +
