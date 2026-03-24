@@ -46,6 +46,7 @@ public class Excursion {
             contador++;
         }
         double total = contador * precio;
+        System.out.println(total);
         return total;
     }
 

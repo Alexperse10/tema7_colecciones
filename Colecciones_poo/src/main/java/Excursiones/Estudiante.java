@@ -72,7 +72,7 @@ public class Estudiante implements Comparable<Estudiante>{
         int cmpApellidos = this.apellidos.compareTo(o.apellidos);
         if (cmpApellidos != 0) return cmpApellidos;
 
-        return this.nombre.compareTo(o.nombre);
+        return this.nombre.compareTo(o.nombre); // si curso y alumnos son iguales decide por nombre
     }
 
     @Override
@@ -84,4 +84,10 @@ public class Estudiante implements Comparable<Estudiante>{
                 ", edad=" + edad +
                 '}';
     }
+
+//    @Override
+//    public int compareTo(Estudiante o) {
+//        return this.curso.compareTo(o.curso);
+//    }
+    // si me dijese que compare solo por curso
 }
