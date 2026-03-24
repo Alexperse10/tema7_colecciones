@@ -74,4 +74,14 @@ public class Estudiante implements Comparable<Estudiante>{
 
         return this.nombre.compareTo(o.nombre);
     }
+
+    @Override
+    public String toString() {
+        return "Estudiante{" +
+                "apellidos='" + apellidos + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", curso='" + curso + '\'' +
+                ", edad=" + edad +
+                '}';
+    }
 }

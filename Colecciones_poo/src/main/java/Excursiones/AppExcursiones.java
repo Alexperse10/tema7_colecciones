@@ -15,9 +15,8 @@ public class AppExcursiones {
         terra_mitica.inscribirasistente();
 
         terra_mitica.verAsistente();
-        System.out.println("introducir edad");
+        System.out.println("introduce edad minima");
         int edad = sc.nextInt();
-
         terra_mitica.eliminarasistenteporedad(edad);
         terra_mitica.verAsistente();
         terra_mitica.calcularimporte();

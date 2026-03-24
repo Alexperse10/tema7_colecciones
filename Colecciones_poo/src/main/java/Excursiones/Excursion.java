@@ -59,16 +59,18 @@ public class Excursion {
     }
 
     public void eliminarasistenteporedad(int edad) {
-        
-//        for (Estudiante asistente : listaAsistes) {
-//            while (!listaAsistes.isEmpty()) {
-//                if (asistente.getEdad() <= edad) {
-//                    listaAsistes.remove(asistente);
-//                }
-//            }
+        Iterator<Estudiante> it = listaAsistes.iterator();
+        while (it.hasNext()){
+            Estudiante asistente = it.next();
+            if (asistente.getEdad()<edad){
+                it.remove();
+            }
+        }
 
             System.out.println("despues de eliminar a los menores de 16 años");
         }
 
+
     }
-}
+
+
