@@ -15,8 +15,9 @@ public class Mercadaw {
     Random aleatorio = new Random();
     String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     public void generarclientes() {
-        String contraseña = "";
+
         for (int j=0; j < 5; j++) {
+            String contraseña = "";
             for (int i = 0; i < 8; i++) {
                 int indice = aleatorio.nextInt(caracteres.length());
                 contraseña += caracteres.charAt(indice);
