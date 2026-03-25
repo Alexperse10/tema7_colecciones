@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+import static Mercadaw.AppZonaClientes.cliente;
+
 public class Pedido {
     private HashMap<Producto,Integer> mapapedido;
     private double importetotal;
@@ -36,23 +38,25 @@ public class Pedido {
 
 
     public void aplicarPromo3x2(){
-        for (Map.Entry<Producto, Integer> entry : mapapedido.entrySet()){
-            int cantidad = entry.getValue();
-            Producto producto = entry.getKey();
+        double nuevototal =0;
+        for (Map.Entry<Producto, Integer> mapa : mapapedido.entrySet()){
+            int cantidad = mapa.getValue();
+            Producto producto = mapa.getKey();
 
             int grupos = cantidad/3;
+            int cantidadpagar = cantidad -grupos;
 
-            if (grupos>0){
-
-            }
-
+            nuevototal += cantidadpagar* producto.getPrecio();
         }
 
+        importetotal = nuevototal;
 
     }
 
-    public void aplicarPromo(){
-        //if (Producto.values())
+    public void aplicarPromo10(){
+        importetotal = importetotal*0.9;
+
+
     }
 
     public HashMap<Producto, Integer> getMapapedido() {

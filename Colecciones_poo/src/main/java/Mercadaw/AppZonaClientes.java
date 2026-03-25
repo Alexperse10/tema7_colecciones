@@ -22,30 +22,7 @@ public class AppZonaClientes {
              respuesta = sc.nextLine().toLowerCase().charAt(0);
         }while (respuesta=='s');
         imprimirresumen();
-        clienteactual.getPedido().aplicarPromo3x2();
-        System.out.println("==================");
-        System.out.println("Que desea hacer");
-        System.out.println("[1] aplicar promos");
-        System.out.println("[2] Mostrar resumen ordenador por uds");
-        System.out.println("[3] Terminar pedido");
-
-        int numero = sc.nextInt();
-        switch (numero){
-            case '1':
-
-                break;
-            case '2':
-                break;
-            case '3':
-                imprimirdespedida();
-                break;
-            default:
-
-
-        }
-
-
-
+        mostraropcion();
 
     }
 
@@ -110,11 +87,39 @@ public class AppZonaClientes {
         System.out.println("lo recibira en uno dias en la direccion calle falsa, 123");
     }
     public static void mostraropcion() {
+        System.out.println("==================");
+        System.out.println("Que desea hacer");
+        System.out.println("[1] aplicar promos");
+        System.out.println("[2] Mostrar resumen ordenador por uds");
+        System.out.println("[3] Terminar pedido");
 
+        int numero = sc.nextInt();
+        switch (numero){
+            case 1:
+                clienteactual.getPedido().aplicarPromo3x2();
+                clienteactual.getPedido().aplicarPromo10();
+                imprimirresumen();
+                clienteactual.setPromociones(true);
+                break;
+            case '2':
+                imprimirresumen();
+                break;
+            case '3':
+                imprimirdespedida();
+                break;
+            default:
+                System.out.println("introduce una opcion valida");
+
+        }
+
+
+
+
+    }
     }
 
 
 
 
-    }
+
 
