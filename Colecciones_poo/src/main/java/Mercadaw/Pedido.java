@@ -46,6 +46,7 @@ public class Pedido {
             int grupos = cantidad/3;
             int cantidadpagar = cantidad -grupos;
 
+
             nuevototal += cantidadpagar* producto.getPrecio();
         }
 
