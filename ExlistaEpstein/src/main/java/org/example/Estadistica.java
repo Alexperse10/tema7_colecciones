@@ -12,6 +12,11 @@ public Estadistica(ArrayList<Famoso> listaepstein) {
     this.estadisticas = new TreeMap<>();
 
 }
+
+public void calcular(ArrayList<Famoso> listaepstein){
+
+}
+
     @Override
     public void verpoliticos() {
 

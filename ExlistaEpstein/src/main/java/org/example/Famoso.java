@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 public class Famoso {
     private String nombre;
     private String pais;
@@ -44,6 +46,19 @@ public class Famoso {
 
     public void setProfesion(String profesion) {
         this.profesion = profesion;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Famoso famoso = (Famoso) o;
+        return edad == famoso.edad && Objects.equals(nombre, famoso.nombre) && Objects.equals(pais, famoso.pais) && Objects.equals(profesion, famoso.profesion);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre, pais, profesion, edad);
     }
 
     @Override
