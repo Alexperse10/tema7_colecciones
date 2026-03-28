@@ -61,7 +61,7 @@ public class Famoso {
         return Objects.hash(nombre, pais, profesion, edad);
     }
 
-    
+
 
     @Override
     public String toString() {
