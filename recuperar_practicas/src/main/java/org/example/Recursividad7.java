@@ -5,7 +5,7 @@ public class Recursividad7 {
             int numero = 4;
 
             int resultado = suma(numero);
-            imprimirCadena(numero);
+            imprimircadena(numero);
             System.out.println(" = " + resultado);
         }
 
@@ -18,11 +18,11 @@ public class Recursividad7 {
         }
 
 
-        public static void imprimirCadena(int numero) {
+        public static void imprimircadena(int numero) {
             if (numero == 1) {
                 System.out.print("1");
             } else {
-                imprimirCadena(numero - 1);
+                imprimircadena(numero - 1);
                 System.out.print("+" + numero);
             }
         }
