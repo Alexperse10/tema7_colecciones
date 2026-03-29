@@ -54,14 +54,16 @@ public class InformesApp {
 
 
         }
-        public static int contartipos(Stack<Informes> pila){
-            Set<Informes> tipos = new HashSet<>();
-            for (Informes inf : pila){
-                tipos.add(inf);
-            }
-            return tipos.size();
+    public static int contartipos(Stack<Informes> pila){
+        Set<String> tipos = new HashSet<>();
+
+        for (Informes inf : pila){
+            String clave = inf.getCodigo() + "-" + inf.getTipo();
+            tipos.add(clave);
         }
 
+        return tipos.size();
+    }
 
     }
 

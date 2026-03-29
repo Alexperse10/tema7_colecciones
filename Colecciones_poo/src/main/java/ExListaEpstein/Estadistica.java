@@ -1,5 +1,5 @@
-package ExListaEpstein;
-
-public class Estadistica implements Informes{
-
-}
+//package ExListaEpstein;
+//
+//public class Estadistica implements Informes{
+//
+//}
