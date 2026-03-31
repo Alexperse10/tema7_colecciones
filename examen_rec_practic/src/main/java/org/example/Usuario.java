@@ -21,7 +21,8 @@ public class Usuario implements Acciones {
     }
 
     public void añadircarrito(Evento evento, int cantidad){
-
+        System.out.println("cuantas entradas quieres maximo 7");
+        Map<Evento,Integer> mapita = new HashMap<>();
     }
 
     public void vercarrito(){

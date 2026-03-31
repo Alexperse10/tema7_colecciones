@@ -86,7 +86,7 @@ public class TicketMutxa {
             contador_++;
             System.out.println("estas en la posicion "+contador_+" de la cola virtual");
         }
-            
+
         }
 
 
