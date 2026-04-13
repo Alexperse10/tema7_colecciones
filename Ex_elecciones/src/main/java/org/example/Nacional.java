@@ -1,10 +1,18 @@
 package org.example;
 
+import java.util.Objects;
+
 public class Nacional extends Votante{
     private String dni;
     public Nacional(String nombre, String poblacion, String dni) {
         super(nombre, poblacion);
         this.dni = dni;
+    }
+
+    public Nacional(String dni){
+        super(null,null);
+        this.dni = dni;
+
     }
 
     @Override
@@ -34,6 +42,19 @@ public class Nacional extends Votante{
     @Override
     public String votar() {
         return "";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Nacional nacional = (Nacional) o;
+        return Objects.equals(dni, nacional.dni);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(dni);
     }
 
     @Override
