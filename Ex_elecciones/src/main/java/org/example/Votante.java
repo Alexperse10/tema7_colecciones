@@ -17,5 +17,29 @@ public abstract class  Votante {
         return 0;
     }
 
-    
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getPoblacion() {
+        return poblacion;
+    }
+
+    public boolean isVotado() {
+        return votado;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setPoblacion(String poblacion) {
+        this.poblacion = poblacion;
+    }
+
+    public void setVotado(boolean votado) {
+        this.votado = votado;
+    }
+
+
 }
