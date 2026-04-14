@@ -11,15 +11,21 @@ public class Extranjero extends Votante{
         this.nie = nie;
     }
 
-    public Extranjero(String nie){
+    public Extranjero(String nie, String pais){
         super(null, null);
         this.nie = nie;
+        this.pais = pais;
 
     }
 
     @Override
     public String getPoblacion() {
         return super.getPoblacion();
+    }
+
+    @Override
+    public void votar() {
+
     }
 
     @Override
@@ -48,10 +54,7 @@ public class Extranjero extends Votante{
         return super.isVotado();
     }
 
-    @Override
-    public String votar() {
-        return "";
-    }
+
 
     @Override
     public boolean equals(Object o) {

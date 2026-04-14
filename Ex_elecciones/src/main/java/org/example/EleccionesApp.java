@@ -2,6 +2,8 @@ package org.example;
 
 import java.util.*;
 
+import static org.example.Censo.censo;
+
 public class EleccionesApp {
     static double matriz [][] = new double[2][4];
     static LinkedHashSet<Votante> yahanvotado= new LinkedHashSet<>();
@@ -17,32 +19,47 @@ public class EleccionesApp {
         while (true) {
             System.out.println("Introduce el tipo de documento a validar [dni,nie] o salir para finalizar la votacion: ");
             String tipodocumento = sc.nextLine().toUpperCase();
-            if (tipodocumento.equalsIgnoreCase("salir")) break;
+            if (tipodocumento.equalsIgnoreCase("salir"))
+                break;
 
             System.out.println("Introduce el número del DNI/NIE que has presentado: ");
             String documento = sc.nextLine();
 
-            if (validarDocumento(documento)) {
-                
+            if (!validarDocumento(documento)) {
+                continue;
             }
-
-        }
+            Votante votante; // se crea una variable de tipo Votante que no un objeto ya que es abstracta y no se puede crear
+            // esto es como una caja que puede guardar un votante. 
+            if (tipodocumento.equalsIgnoreCase("DNI")){
+                votante = new Nacional(documento);
+            } else{
+                votante = new Extranjero(documento,"mundo");
+            }
+            verificarEmpadronamiento(votante);
+            }
     }
 
     public static boolean validarDocumento (String documento) {
-
-        System.out.println("introduce el dni/nie");
-        String dni = sc.nextLine();
-        if (!dni.matches("\\d{8}[A-Za-z]")){
+        if (!documento.matches("\\d{8}[A-Za-z]")){
             System.out.println("el dni/nie no es correcto");
-            return false;
+            return false;   // explicacion del return si el documento tiene un formato incorrecto entra el return false
+            // si el documento es correcto entonces ejecuta el return true y no entra el if
+            // return true esta todo bien y return false hay un error.
         }
         return true;
     }
 
 
     public static boolean verificarEmpadronamiento(Votante votante) {
-        return true;
+        for (Votante votante_ : Censo.getCenso()) {
+            if (votante_.equals(votante)) {
+                System.out.println("Votante esta censado correctamente");
+                return true;
+            }
+
+        }
+        System.out.println("la persona no esta empadronada");
+        return false;
     }
 
     public static boolean comprobarfraude( Votante votante) {

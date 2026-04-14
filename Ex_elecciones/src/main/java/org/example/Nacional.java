@@ -16,6 +16,11 @@ public class Nacional extends Votante{
     }
 
     @Override
+    public void votar() {
+
+    }
+
+    @Override
     public String getNombre() {
         return super.getNombre();
     }
@@ -39,10 +44,7 @@ public class Nacional extends Votante{
     }
 
 
-    @Override
-    public String votar() {
-        return "";
-    }
+
 
     @Override
     public boolean equals(Object o) {

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 @Getter
 public class Censo {
 
+    @Getter
     static ArrayList<Votante> censo = new ArrayList<>();
 
     public static void generarCenso(){
@@ -32,6 +33,7 @@ public class Censo {
         censo.add(new Extranjero("Mutxamel", "Ivan", "X8888888H", "Rusia"));
 
     }
+
 
 
 }

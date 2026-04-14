@@ -12,7 +12,7 @@ public abstract class  Votante {
 
     }
 
-    public abstract String votar();
+    public abstract void votar();
     public static int encuentasatisfaccion() {
         return 0;
     }
@@ -40,6 +40,5 @@ public abstract class  Votante {
     public void setVotado(boolean votado) {
         this.votado = votado;
     }
-
 
 }
