@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Nacional extends Votante{
     private String dni;
-    public Nacional(String nombre, String poblacion, String dni) {
+    public Nacional(String poblacion, String nombre, String dni) {
         super(nombre, poblacion);
         this.dni = dni;
     }

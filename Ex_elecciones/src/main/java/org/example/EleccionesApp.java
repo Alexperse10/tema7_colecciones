@@ -29,15 +29,33 @@ public class EleccionesApp {
                 continue;
             }
             Votante votante; // se crea una variable de tipo Votante que no un objeto ya que es abstracta y no se puede crear
-            // esto es como una caja que puede guardar un votante. 
+            // esto es como una caja que puede guardar un votante.
             if (tipodocumento.equalsIgnoreCase("DNI")){
                 votante = new Nacional(documento);
             } else{
                 votante = new Extranjero(documento,"mundo");
             }
-            verificarEmpadronamiento(votante);
+            if (!verificarEmpadronamiento(votante)){
+                continue;
             }
-    }
+
+            try {
+                comprobarfraude(votante);
+            } catch (FraudeExcepcion e){
+                System.out.println(e.getMessage());
+                continue;
+            }
+            String respuesta;
+            do {
+            System.out.println("votatne naciona con dni "+votante+ "realizando voto");
+            System.out.println("si o no a la guerra?");
+            respuesta = sc.nextLine();
+
+            }while (!respuesta.equalsIgnoreCase("si") && !respuesta.equalsIgnoreCase("no"));
+            }
+
+            }
+
 
     public static boolean validarDocumento (String documento) {
         if (!documento.matches("\\d{8}[A-Za-z]")){
@@ -63,8 +81,20 @@ public class EleccionesApp {
     }
 
     public static boolean comprobarfraude( Votante votante) {
+        System.out.println("comprobando datos...");
+        if (votante.isVotado()) {
+            throw new FraudeExcepcion("!Aviso a la guardia civil, intento doble voto detectado");
+
+
+        }
+        for (Votante vot : Censo.getCenso()){
+            if (vot.equals(votante)){
+                System.out.println(vot.getNombre() + " puede votar");
+            }
+        }
         return true;
     }
+
 
     public static void contabilizardatosencuenta(int opcion) {
 
