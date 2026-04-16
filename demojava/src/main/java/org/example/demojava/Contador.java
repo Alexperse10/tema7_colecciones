@@ -1,6 +1,7 @@
 package org.example.demojava;
 
 public class Contador {
+
     private int contador;
 
     public Contador() {
@@ -15,4 +16,3 @@ public class Contador {
         return contador;
     }
 }
-
